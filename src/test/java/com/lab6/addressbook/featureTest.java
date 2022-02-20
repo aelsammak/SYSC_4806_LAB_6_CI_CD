@@ -12,7 +12,7 @@ public class featureTest {
     @Test
     public void addressBookFieldTest() {
         buddyInfoModel = new BuddyInfoModel("adi", "194 blohm dr", "613 561 1234");
-        assertNull(buddyInfoModel.getAddressBookName());
+        assertEquals("abm1", buddyInfoModel.getAddressBookName());
         buddyInfoModel.setAddressBookName("addressbook1");
         assertEquals("addressbook1", buddyInfoModel.getAddressBookName());
     }

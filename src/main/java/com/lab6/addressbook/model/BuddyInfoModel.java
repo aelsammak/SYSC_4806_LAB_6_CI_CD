@@ -21,6 +21,14 @@ public class BuddyInfoModel implements Serializable {
         this.name = name;
         this.address = address;
         this.number = number;
+        this.addressBookName = "abm1";
+    }
+
+    public BuddyInfoModel(String name, String address, String number, String addressBookName) {
+        this.name = name;
+        this.address = address;
+        this.number = number;
+        this.addressBookName = addressBookName;
     }
 
     public BuddyInfoModel() {

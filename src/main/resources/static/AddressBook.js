@@ -14,7 +14,8 @@ $(document).ready(
             var formData = {
                 name : $("#buddyName").val(),
                 address : $("#buddyAddress").val(),
-                number : $("#buddyNumber").val()
+                number : $("#buddyNumber").val(),
+                addressBookName: $("#addressBookName").val()
             }
 
             // DO POST

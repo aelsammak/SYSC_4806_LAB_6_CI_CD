@@ -41,7 +41,8 @@ public class EndpointsTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.name").value("adi"))
                 .andExpect(jsonPath("$.address").value("194 Forestglade cr."))
-                .andExpect(jsonPath("$.number").value("613 456 5657"));
+                .andExpect(jsonPath("$.number").value("613 456 5657"))
+                .andExpect(jsonPath("$.addressBookName").value("abm1"));;
     }
 
     @Test
