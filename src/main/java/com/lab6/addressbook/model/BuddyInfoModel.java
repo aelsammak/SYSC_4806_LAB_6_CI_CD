@@ -1,10 +1,11 @@
 package com.lab6.addressbook.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "Buddies")
-public class BuddyInfoModel {
+@Table()
+public class BuddyInfoModel implements Serializable {
 
     @Id()
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -34,7 +35,7 @@ public class BuddyInfoModel {
     }
 
     public String toString() {
-        String str = "Name: " + name + " Address: " + address + " Number: " + number;
+        String str = "{name:" + name + ", address:" + address + ", number:" + number + "}";
         return str;
     }
 

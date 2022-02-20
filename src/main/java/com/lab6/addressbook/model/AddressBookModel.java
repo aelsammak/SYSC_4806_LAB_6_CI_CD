@@ -1,12 +1,13 @@
 package com.lab6.addressbook.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "AddressBooks")
-public class AddressBookModel {
+@Table()
+public class AddressBookModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
