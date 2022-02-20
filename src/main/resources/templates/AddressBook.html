@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>AddressBook</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="AddressBook.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center">ADD A NEW BUDDY</h1>
+
+    <div class="container">
+        <form id="registerBuddyForm">
+            <div class="form-group">
+                <label for="buddyName">Name of Buddy</label>
+                <input type="name" class="form-control" id="buddyName" placeholder="Enter Buddy Name">
+            </div>
+            <div class="form-group">
+                <label for="buddyAddress">Address of Buddy</label>
+                <input type="address" class="form-control" id="buddyAddress" placeholder="Enter Buddy Address">
+            </div>
+            <div class="form-group">
+                <label for="buddyNumber">Phone Number of Buddy</label>
+                <input type="number" class="form-control" id="buddyNumber" placeholder="Enter Buddy Phone Number">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <h1 style="text-align: center">UPDATE BUDDY ADDRESS</h1>
+
+    <div class="container">
+        <form id="updateBuddyForm">
+            <div class="form-group">
+                <label for="existingBuddyName">Name of Buddy</label>
+                <input type="name" class="form-control" id="existingBuddyName" placeholder="Enter Buddy Name">
+            </div>
+            <div class="form-group">
+                <label for="newBuddyAddress">Address of Buddy</label>
+                <input type="address" class="form-control" id="newBuddyAddress" placeholder="Enter NEW Buddy Address">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <h1 style="text-align: center">DELETE BUDDY</h1>
+
+    <div class="container">
+        <form id="deleteBuddyForm">
+            <div class="form-group">
+                <label for="buddyToDelete">Name of Buddy</label>
+                <input type="name" class="form-control" id="buddyToDelete" placeholder="Enter Buddy Name To Delete">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 35px">
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Number</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="BuddyInfoModel : ${Buddies}">
+                <td th:text="${BuddyInfoModel.id}"></td>
+                <td th:text="${BuddyInfoModel.name}"></td>
+                <td th:text="${BuddyInfoModel.address}"></td>
+                <td th:text="${BuddyInfoModel.number}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
