@@ -1,5 +1,7 @@
 package com.lab6.addressbook.model;
 
+import com.lab6.addressbook.repository.AddressBookRepo;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -13,6 +15,7 @@ public class BuddyInfoModel implements Serializable {
     private String name;
     private String address;
     private String number;
+    private String addressBookName;
 
     public BuddyInfoModel(String name, String address, String number) {
         this.name = name;
@@ -37,6 +40,14 @@ public class BuddyInfoModel implements Serializable {
     public String toString() {
         String str = "{name:" + name + ", address:" + address + ", number:" + number + "}";
         return str;
+    }
+
+    public void setAddressBookName(String addressBookName) {
+        this.addressBookName = addressBookName;
+    }
+
+    public String getAddressBookName() {
+        return addressBookName;
     }
 
     // Setting Name
